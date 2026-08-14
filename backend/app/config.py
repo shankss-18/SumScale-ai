@@ -28,7 +28,7 @@ class Settings(BaseSettings):
     # -----------------------------------------------------------------------
     # LLM Provider — Google Gemini (used for multimodal file extraction)
     # -----------------------------------------------------------------------
-    GEMINI_API_KEY: str = Field(..., description="Google Gemini API key (required for image/audio extraction)")
+    GEMINI_API_KEY: str = Field(default="", description="Google Gemini API key")
 
     # -----------------------------------------------------------------------
     # LLM Provider — Groq (used for chat & text analysis — optional, falls back to Gemini)
@@ -51,33 +51,31 @@ class Settings(BaseSettings):
 
     # -----------------------------------------------------------------------
     # Speech-to-Text (Google Cloud Speech or equivalent)
-    # NOTE: The app uses Gemini multimodal directly for file extraction.
-    # This key is kept for future dedicated speech API usage.
     # -----------------------------------------------------------------------
     SPEECH_TO_TEXT_API_KEY: str = Field(default="", description="Speech-to-text API key (optional — Gemini handles multimodal extraction)")
 
     # -----------------------------------------------------------------------
-    # Google Places / Maps API (optional — used for nearby doctor/help map links in frontend)
+    # Google Places / Maps API (optional)
     # -----------------------------------------------------------------------
-    GOOGLE_PLACES_API_KEY: str = Field(default="", description="Google Places API key (optional — used for map feature)")
+    GOOGLE_PLACES_API_KEY: str = Field(default="", description="Google Places API key (optional)")
 
     # -----------------------------------------------------------------------
     # MongoDB (motor async driver)
     # -----------------------------------------------------------------------
-    MONGODB_URL: str = Field(..., description="MongoDB connection string (required)")
-    MONGODB_DB_NAME: str = Field(default="sumscale_local", description="MongoDB database name — defaults to sumscale_local for local dev")
+    MONGODB_URL: str = Field(default="mongodb://localhost:27017", description="MongoDB connection string")
+    MONGODB_DB_NAME: str = Field(default="sumscale_local", description="MongoDB database name")
 
     # -----------------------------------------------------------------------
     # JWT Authentication
     # -----------------------------------------------------------------------
-    JWT_SECRET_KEY: str = Field(..., description="JWT signing secret — must be a long random string (required)")
+    JWT_SECRET_KEY: str = Field(default="sumscale_production_secret_key_2026_change_me_in_render_env", description="JWT signing secret")
     JWT_ALGORITHM: str = Field(default="HS256")
-    JWT_EXPIRE_MINUTES: int = Field(default=10080, description="Token lifetime in minutes (default: 7 days)")
+    JWT_EXPIRE_MINUTES: int = Field(default=10080, description="Token lifetime in minutes")
 
     # -----------------------------------------------------------------------
-    # CORS — frontend origin only, never wildcard
+    # CORS — frontend origin
     # -----------------------------------------------------------------------
-    FRONTEND_URL: str = Field(..., description="Frontend origin for CORS, e.g. http://localhost:5173 (required)")
+    FRONTEND_URL: str = Field(default="http://localhost:5173", description="Frontend origin for CORS")
 
     # -----------------------------------------------------------------------
     # Application
