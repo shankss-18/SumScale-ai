@@ -1,0 +1,9 @@
+Contact: mailto:security@sumscale.ai
+Preferred-Languages: en
+Canonical: https://sum-scale.vercel.app/.well-known/security.txt
+Expires: 2027-12-31T23:59:59.000Z
+
+# SumScale Security Policy
+# If you discover a security vulnerability in this application,
+# please disclose it responsibly by contacting us at the email above.
+# We aim to respond within 72 hours and will credit responsible disclosures.

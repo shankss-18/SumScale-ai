@@ -1,0 +1,44 @@
+# Environment & Secrets (CRITICAL SECURITY)
+.env
+.env.*
+!.env.example
+*.env
+backend/.env
+frontend/.env
+*.pem
+*.key
+*.cert
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+env/
+.pytest_cache/
+*.sqlite3
+
+# Node.js & Web
+node_modules/
+frontend/node_modules/
+dist/
+frontend/dist/
+.npm
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# User Uploads & Media Assets
+uploads/
+backend/uploads/
+*.lnk
+
+# IDE & OS Junk
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
