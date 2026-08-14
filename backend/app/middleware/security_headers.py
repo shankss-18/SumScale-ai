@@ -30,6 +30,9 @@ class SecurityHeadersMiddleware(BaseHTTPMiddleware):
         self._is_production = environment == "production"
 
     async def dispatch(self, request: Request, call_next) -> Response:
+        if request.method == "OPTIONS":
+            return await call_next(request)
+
         response: Response = await call_next(request)
 
         # Prevent MIME-type sniffing
@@ -41,20 +44,8 @@ class SecurityHeadersMiddleware(BaseHTTPMiddleware):
         # Control referrer information
         response.headers["Referrer-Policy"] = "strict-origin-when-cross-origin"
 
-        # Disable legacy XSS filter (rely on CSP instead)
+        # Disable legacy XSS filter
         response.headers["X-XSS-Protection"] = "0"
-
-        # Restrictive Content Security Policy baseline
-        # Feature code should tighten this further per-endpoint if needed
-        response.headers["Content-Security-Policy"] = (
-            "default-src 'self'; "
-            "script-src 'self'; "
-            "style-src 'self' 'unsafe-inline'; "
-            "img-src 'self' data: https:; "
-            "connect-src 'self'; "
-            "font-src 'self'; "
-            "frame-ancestors 'none';"
-        )
 
         # Deny access to sensitive browser APIs by default
         response.headers["Permissions-Policy"] = (

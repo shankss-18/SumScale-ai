@@ -158,17 +158,25 @@ async def global_exception_handler(request: Request, exc: Exception):
 # Stack (outermost → innermost): Logging → SecurityHeaders → CORS → Routes
 # ---------------------------------------------------------------------------
 
-# 1. CORS — must declare the specific frontend origin, never "*"
+# 1. CORS — robust cross-origin access for production Vercel & local dev
+frontend_url_clean = (settings.FRONTEND_URL or "").rstrip("/")
+allowed_origins = list(filter(None, [
+    frontend_url_clean,
+    "https://sum-scale-ai.vercel.app",
+    "https://sumscale-ai.vercel.app",
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+    "http://localhost:3000",
+]))
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        settings.FRONTEND_URL,
-        "http://localhost:5173",
-        "http://127.0.0.1:5173",
-    ],
+    allow_origins=allowed_origins,
+    allow_origin_regex=r"https://.*\.vercel\.app|http://localhost:\d+|http://127\.0\.0\.1:\d+",
     allow_credentials=True,
-    allow_methods=["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
-    allow_headers=["Authorization", "Content-Type", "X-Request-ID", "Accept"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+    expose_headers=["*"],
 )
 
 # 2. Security headers (X-Frame-Options, CSP, HSTS, etc.)
