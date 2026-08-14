@@ -22,7 +22,10 @@ import uuid
 import logging
 from typing import Tuple, Set, Dict, Optional
 from pathlib import Path
-import magic
+try:
+    import magic
+except Exception:
+    magic = None
 
 logger = logging.getLogger("omniaid.file_validation")
 
@@ -139,12 +142,13 @@ def detect_mime_type(content: bytes, original_filename: str = "") -> str:
         return sniffed
 
     # Layer 2: python-magic
-    try:
-        mime = magic.from_buffer(content, mime=True).lower()
-        if mime and mime != "application/octet-stream":
-            return mime
-    except Exception as exc:
-        logger.warning(f"python-magic detection failed: {exc}")
+    if magic is not None:
+        try:
+            mime = magic.from_buffer(content, mime=True).lower()
+            if mime and mime != "application/octet-stream":
+                return mime
+        except Exception as exc:
+            logger.warning(f"python-magic detection failed: {exc}")
 
     # Layer 3: file extension fallback
     if original_filename:
