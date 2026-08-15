@@ -32,30 +32,35 @@
 
 ## ✨ Core Capabilities & Features
 
-### 📄 1. Multimodal Document Synthesis & Deep Extraction
+### 📄 1. Intelligent Document Summarization & Deep Extraction
 - **Multi-Format Ingestion**: Native parsing for PDFs, Scanned Medical Reports, Financial CSV/XLSX Spreadsheets, Receipts, and Images (`JPEG`, `PNG`, `WEBP`, `TIFF`).
-- **Structured Knowledge Extraction**: Converts complex jargon, multi-column tables, and dense medical lab readings into categorized risk levels (**High Risk**, **Medium Risk**, **Low Risk**) with clear, layperson-friendly recommendations.
+- **Concise AI Summarization**: Converts multi-page documents, dense lab reports, and legal agreements into clean, structured summaries highlighting key findings, risk factors, and actionable recommendations.
+- **Structured Knowledge Extraction**: Categorizes documents by severity (**High Risk**, **Medium Risk**, **Low Risk**) with clear, layperson-friendly guidance.
 
-### 🛡️ 2. Threat-Intelligence Fraud & Scam Shield
+### 📈 2. Business Insights & Automated Schedule Intelligence
+- **Deadline & Metric Harvesting**: AI automatically scans uploaded business contracts, invoices, financial spreadsheets, and reports to detect hidden payment due dates, tax deadlines, compliance milestones, and renewal terms.
+- **Insight-Driven Reminders**: Automatically converts detected business milestones into actionable reminders. When triggered, SumScale dispatches rich HTML email alerts featuring priority badges, contextual business notes, and direct portal action links.
+
+### 🛡️ 3. Threat-Intelligence Fraud & Scam Shield
 - **Multi-API Risk Verification**: Scans suspicious text messages, emails, phishing links, phone numbers, and fake invoices.
 - **Threat Engines**: Integrates **Google Safe Browsing v4**, **VirusTotal v3**, **IPQualityScore**, and **WhoisXML** to verify domain age, IP reputation, malware hashes, and SMS phishing probability.
 - **Actionable Remediation**: Generates step-by-step defensive actions for non-technical users.
 
-### ⏰ 3. Real-Time Reminders Hub & 5-Second Scheduler
+### ⏰ 4. Real-Time Reminders Hub & 5-Second Scheduler
 - **Typable 12-Hour Time Interface**: User-friendly hour (`1-12`), minute (`0-59`), and `AM/PM` inputs automatically converted to standard UTC ISO timestamps.
 - **5-Second Real-Time Polling**: Background **APScheduler** loop evaluates due dates every 5 seconds.
 - **HTML Email Dispatch**: Sends beautifully formatted, high-priority email alerts directly to the user's Gmail inbox using **Brevo REST API** / **SMTP Mailer**.
 
-### 👥 4. Trust Circle & Emergency Safety Network
+### 👥 5. Trust Circle & Emergency Safety Network
 - **Personal Safety Mesh**: Allows users to manage trusted contacts (Family, Friends, Doctors, Guardians) with designated relationship labels.
 - **One-Click Risk Broadcast**: Instantly dispatches a structured safety alert email to Trust Circle members whenever a critical health anomaly or high-risk scam attempt is detected.
 
-### 🎙️ 5. Voice Intelligence & Multilingual AI Copilot
+### 🎙️ 6. Voice Intelligence & Multilingual AI Copilot
 - **Live Microphone Capture**: Browser `MediaRecorder` API with dynamic audio waveform visualization and instant Speech-to-Text transcription.
 - **Text-to-Speech Output**: Integrated browser speech synthesis for hands-free audio responses.
 - **Context-Aware Floating Assistant**: Floating AI copilot capable of answering follow-up queries on uploaded cases with multi-paragraph markdown rendering.
 
-### 🌐 6. Vernacular i18n Localization
+### 🌐 7. Vernacular i18n Localization
 - Instant language switching across the entire UI and AI response pipeline:
   - 🇺🇸 **English (US)**
   - 🇮🇳 **Hindi (हिंदी)**
@@ -63,7 +68,7 @@
   - 🇮🇳 **Tamil (தமிழ்)**
   - 🇮🇳 **Kannada (ಕನ್ನಡ)**
 
-### 📊 7. Executive Dashboard & Severity Analytics
+### 📊 8. Executive Dashboard & Severity Analytics
 - **Donut Severity Breakdown**: High-contrast SVG Donut chart displaying risk metrics (**High Risk** in vibrant crimson `#ef4444`, **Low Risk** in `#006D77`).
 - **2-Section Today Overview**: Streamlined side-by-side view featuring `📅 Scheduled Today` and `⏩ Upcoming Reminders`.
 
