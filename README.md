@@ -1,20 +1,5 @@
 # 🌊 SumScale 2.0 — Multimodal AI Intelligence & Life-Safety Platform
 
-<div align="center">
-
-[![Live Demo](https://img.shields.io/badge/Live%20Platform-sum--scale--ai.vercel.app-006D77?style=for-the-badge&logo=vercel&logoColor=white)](https://sum-scale-ai.vercel.app)
-[![Backend Status](https://img.shields.io/badge/Render%20Backend-Active%20API-83C5BE?style=for-the-badge&logo=render&logoColor=black)](https://sumscale-ai-backend.onrender.com)
-[![Python](https://img.shields.io/badge/Python-3.11.9-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.115.5-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
-[![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
-[![Gemini 2.0](https://img.shields.io/badge/Google%20Gemini-Multimodal%20AI-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://aistudio.google.com/)
-[![Groq LLaMA 3.3](https://img.shields.io/badge/Groq-LLaMA%203.3%2070B-f55036?style=for-the-badge&logo=groq&logoColor=white)](https://groq.com/)
-
-**Reach your data in any format. Synthesize decisions in seconds.**
-
-[Explore Live Platform](https://sum-scale-ai.vercel.app) • [API Reference](#-api-endpoint-reference) • [Architecture](#-architecture--system-design) • [Quickstart Guide](#-local-quickstart-guide)
-
-</div>
 
 ---
 
